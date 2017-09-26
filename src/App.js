@@ -29,6 +29,7 @@ const spin = keyframes`
 
 const Logo = styled.img`
   animation: ${spin} infinite 20s linear;
+  ${props => props.backwards && 'animation-direction: reverse;'}
   height: 80px;
 `;
 
@@ -41,7 +42,7 @@ class App extends Component {
     return (
       <AppContainer>
         <Header uppercase>
-          <Logo src={logo} alt="logo" />
+          <Logo backwards src={logo} alt="logo" />
           <h2>welcome to react</h2>
         </Header>
         <Intro>
