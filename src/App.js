@@ -11,6 +11,15 @@ const Header = styled.div`
   height: 150px;
   padding: 20px;
   color: white;
+  
+  > h2 {
+    text-transform: ${props => props.uppercase ? 'uppercase' : 'capitalize'};
+    transition: color .5s ease;
+    
+    &:hover {
+      color: palevioletred;
+    }
+  }
 `;
 
 const spin = keyframes`
@@ -31,9 +40,9 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <Header>
+        <Header uppercase>
           <Logo src={logo} alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>welcome to react</h2>
         </Header>
         <Intro>
           To get started, edit <code>src/App.js</code> and save to reload.
